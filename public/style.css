@@ -44,6 +44,30 @@ body {background-color: white;
     color:black;
     font-size: large;
   }
+  #bumperText{
+    width: 45%;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    padding:20px;
+    border-style: solid;
+  }
+  .bumperText-label{
+    color:black;
+    font-size: large;
+  }
+  .bumperValues{
+    background-color: #fa5B30;
+    width:100%;
+    height: 30px;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    border-radius: 25px;
+    padding-top: 5px;
+    font-size: large;
+    color:white;
+  }
   #videoDescription{
     background-color: #fa5B30;
     width:35%;
@@ -56,53 +80,43 @@ body {background-color: white;
     font-size: large;
     color:white;
   }
-  #discordChannel-label{
-    color:black;
-    font-size: large;
-  }
-  #mp4-label{
-    color:black;
-    font-size: large;
-  }
-  #mp4{
+  #watermark-file-label{
     background-color: #fa5B30;
-    width:25%;
+    width:50%;
     height: 30px;
     margin: auto;
     display: inline-block;
     text-align: center;
     border-radius: 25px;
-    padding-top: 5px;
-    font-size: large;
+    padding: 10px;
+    font-size: x-large;
     color:white;
   }
-  #public-label{
-    color:black;
-    font-size: large;
+  #watermark-file{
+    opacity: 0; /* make transparent */
+    z-index: -1; /* move under anything else */
+    position: absolute; /* don't let it take up space */
+
+
   }
-  #public{
+  #background-file-label{
     background-color: #fa5B30;
-    width:25%;
+    width:50%;
     height: 30px;
     margin: auto;
     display: inline-block;
     text-align: center;
     border-radius: 25px;
-    padding-top: 5px;
-    font-size: large;
+    padding: 10px;
+    font-size: x-large;
     color:white;
   }
-  #discordChannel{
-    background-color: #fa5B30;
-    width:35%;
-    height: 30px;
-    margin: auto;
-    display: inline-block;
-    text-align: center;
-    border-radius: 25px;
-    padding-top: 5px;
-    font-size: large;
-    color:white;
+  #background-file{
+    opacity: 0; /* make transparent */
+    z-index: -1; /* move under anything else */
+    position: absolute; /* don't let it take up space */
+
+
   }
   #video-file-label{
     background-color: #fa5B30;
