@@ -38,7 +38,7 @@ const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
 const api = new Shotstack.EditApi();
 //set to shotstack staging (for now)
-let apiUrl = 'https://api.shotstack.io/stage';
+let apiUrl = 'https://api.shotstack.io/v1';
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SSapiKey;
 
@@ -185,7 +185,7 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 								"shotstackId" :"",
 								"shotstackStatus": "not started",
 								"finalVideoId": "",
-								"final720pReady":false
+								"finalPlayerURL":""
 							};
 
 	var reqBody = (req.body);
@@ -400,7 +400,8 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 								console.log('finalvideoid',finalvideoId);
 								console.log('finalPlayerURL',finalPlayerURL);
 								res.send(finalPlayerURL);
-								videoProgressJson.shotstackStatus = status;
+								videoProgressJson.finalVideoId = finalvideoId;
+								videoProgressJson.finalPlayerURL = finalPlayerURL;
 								videoStatus (videocreationList, videoId);
 
 							});
