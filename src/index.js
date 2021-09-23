@@ -169,6 +169,7 @@ function videoStatus (videocreationList, videoId){
 			//matched the video
 			console.log("matched a video status");
 			console.log(JSON.stringify(videocreationList[i]));
+			return(JSON.stringify(videocreationList[i]));
 
 		}
 
@@ -178,7 +179,7 @@ function videoStatus (videocreationList, videoId){
 }
 
 
-app.post('/trackprogress',timeout('60s'), (req,res) => {
+app.post('/trackprogress', (req,res) => {
 
 	var videoProgressJson = { 	"initialvideoid":"",
 								"mp4Created": false,
@@ -399,10 +400,10 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 								var finalPlayerURL = finalVideo.assets.player;
 								console.log('finalvideoid',finalvideoId);
 								console.log('finalPlayerURL',finalPlayerURL);
-								res.send(finalPlayerURL);
+								//res.send(finalPlayerURL);
 								videoProgressJson.finalVideoId = finalvideoId;
 								videoProgressJson.finalPlayerURL = finalPlayerURL;
-								videoStatus (videocreationList, videoId);
+								videoStatus(videocreationList, videoId);
 
 							});
 						}
@@ -424,6 +425,18 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 		}
 	}
 	checkWebhook(videoId, encodingType, webhooks);
+	res.send(videoId);
+});
+
+
+
+app.post('/videoprogress', (req,res) => {
+	//get the original videoId
+	req.body.idToCheck;
+	currentStatus = videoStatus(videocreationList, idToCheck);
+	console.log("currentStatus",currentStatus)
+	res.send(currentStatus);
+
 });
 
 

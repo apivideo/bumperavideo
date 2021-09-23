@@ -130,11 +130,26 @@ window.onload  = function(){
                     pReq.open("POST", '/trackprogress' );
                     pReq.setRequestHeader("Content-type", "application/json");
                     pReq.onload = function (oEvent) {
-                        //this means that the mp4 was created - all the stuff sent to Shotstack, 
-                        //the video created and uplaoded to api.video, and the 720p verison is readyto watch
+                        //this means files are uploaded, and the process is underway. Now we add the button to check the status of the video
                         console.log(pReq.response);
-                        var finalurl = pReq.response;
-                        document.getElementById("video-information").innerHTML = "video created at api.video "+ finalurl;
+                        var idtoCheck = pReq.response;
+                        document.getElementById("video-information").innerHTML = "video created at api.video, and the bumpers are being created.";
+                        statusButton = document.getElementById("statusButton");
+                        statusButton.style.display("inline");
+                        statusButton.addEventListener('click', () =>{
+                            //call the status endpoint
+                            var rReq = new XMLHttpRequest();
+                            rReq.open("POST", '/videoprogress' );
+                            var VideoIdJson = {
+                                "idToCheck":idtoCheck
+                            }
+                            pReq.onload = function (oEvent) {
+                                //not pretty atm
+                                document.getElementById("status").innerHTML = rReq.response;
+                            }
+                            pReq.send(JSON.stringify(VideoIdJson));
+
+                        })
                     }
                     pReq.send(JSON.stringify(titleJson));
 
