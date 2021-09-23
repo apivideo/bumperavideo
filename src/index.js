@@ -221,7 +221,7 @@ app.post('/trackprogress', (req,res) => {
 							introBGClip.setLength(4);
 						let outroBGClip = new Shotstack.Clip;
 							outroBGClip.setAsset(backgroundAsset);
-							outroBGClip.setStart(4+duratiion);
+							outroBGClip.setStart(4+duration);
 							outroBGClip.setLength(4);
 
 
