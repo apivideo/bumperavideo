@@ -101,11 +101,11 @@ app.post('/createVideo', (req,res) => {
 		var wmName = path.parse(files.watermarkFile.name).name;
 
 		var newWmPath = newPath +wmName;
-		fs.rename(bgPath, newbgPath, function (err) {
+		fs.copyFile(bgPath, newbgPath, function (err) {
 			if (err) throw err;
 		 console.log('File uploaded and moved!');
 		//FILE IS RENAMED
-			fs.rename(wmPath, newWmPath, function (err) {
+			fs.copyFile(wmPath, newWmPath, function (err) {
 				if (err) throw err;
 			console.log('File uploaded and moved!');
 			//FILE IS RENAMED
