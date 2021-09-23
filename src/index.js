@@ -175,7 +175,7 @@ app.post('/trackprogress', (req,res) => {
 	const wmpath = req.body.wmpath;
 	const title = req.body.title;
 	const descr = req.body.descr;
-	console.log("paths" ,bgpath+bgpath);
+	console.log("paths" ,bgpath+wmpath);
 	//we need the videoId and the mp4 encoding type to check the webhook responses
 	var videoId = reqBody.videoId;
 	var encodingType = "mp4";
@@ -286,15 +286,15 @@ app.post('/trackprogress', (req,res) => {
 
 						//all the assets in clips go in tracks
 
-						let watermarkTrack = new Shotstack.Track;
-							watermarkTrack.setClips([watermarkClip]);
+					//	let watermarkTrack = new Shotstack.Track;
+					//		watermarkTrack.setClips([watermarkClip]);
 						let mainTrack = new Shotstack.Track;
 							mainTrack.setClips([introBGClip, titleIntroClip, titleIntroClip2, videoClip, outroBGClip, titleOutroClip, titleOutroClip2]);
 						
 						//all the tracks go in a timeline
 						let timeline = new Shotstack.Timeline;
-								timeline.setTracks([watermarkTrack, mainTrack]);
-
+								//timeline.setTracks([watermarkTrack, mainTrack]);
+								timeline.setTracks([ mainTrack]);
 						//output is required
 						let output = new Shotstack.Output;
 							output.setFormat('mp4')
