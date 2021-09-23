@@ -290,8 +290,8 @@ app.post('/trackprogress', (req,res) => {
 
 						//all the assets in clips go in tracks
 
-					//	let watermarkTrack = new Shotstack.Track;
-					//		watermarkTrack.setClips([watermarkClip]);
+						let watermarkTrack = new Shotstack.Track;
+							watermarkTrack.setClips([watermarkClip]);
 						let mainTrack = new Shotstack.Track;
 							mainTrack.setClips([introBGClip, titleIntroClip, titleIntroClip2, videoClip, outroBGClip, titleOutroClip, titleOutroClip2]);
 						
