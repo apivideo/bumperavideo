@@ -235,6 +235,10 @@ app.post('/trackprogress', (req,res) => {
 						//watermark to run full video 
 						let watermarkClip = new Shotstack.Clip;
 							watermarkClip.setAsset(watermarkAsset);
+							watermarkClip.setPosition("topLeft");
+							watermarkClip.setOffset({"x": 0.05,"y": -0.05});
+							watermarkClip.setOpacity(0.5);
+							watermarkClip.setFit("none");
 							watermarkClip.setStart(0);
 							watermarkClip.setLength(4+duration);
 
