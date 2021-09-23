@@ -186,7 +186,8 @@ app.post('/trackprogress', (req,res) => {
 								"shotstackId" :"",
 								"shotstackStatus": "not started",
 								"finalVideoId": "",
-								"finalPlayerURL":""
+								"finalPlayerURL":"",
+								"readyToPlay":false
 							};
 
 	var reqBody = (req.body);
@@ -434,8 +435,15 @@ app.post('/videoprogress', (req,res) => {
 	//get the original videoId
 	var idToCheck = req.body.idToCheck;
 	console.log ("idToCheck",idToCheck);
+	//check the webhook to see if 720p is ready
+	for(var i=0;i<webhooks.length;i++){
+		if(webhooks[i].videoId === idToCheck && webhooks[i].encoding === 720){
+			videoProgressJson.readyToPlay = true;
+		}
+	}
 	currentStatus = videoStatus(videocreationList, idToCheck);
 	console.log("currentStatus",currentStatus)
+
 	res.send(currentStatus);
 
 });
