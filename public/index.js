@@ -153,7 +153,7 @@ window.onload  = function(){
                                 finalJson = JSON.parse(rReq.response);
                                 var finalURL = finalJson.finalPlayerURL;
 
-                                document.getElementById("status").innerHTML = rReq.response + "<br/> <iframe src=\""+finalURL+"\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"></iframe>";
+                                document.getElementById("status").innerHTML = rReq.response + "<br/> <iframe src=\""+finalURL+"\" width=\"100%\"  frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"></iframe>";
                             }
                             rReq.send(JSON.stringify(VideoIdJson));
 
