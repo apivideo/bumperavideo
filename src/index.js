@@ -263,7 +263,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset.setSize('x-large');
 							titleouttroTextAsset.setPosition('center');
 						let titleOutroClip = new Shotstack.Clip;
-							titleOutroClip.setAsset(titleOutroTextAsset);
+							titleOutroClip.setAsset(titleouttroTextAsset);
 							titleOutroClip.setStart(0.1);
 							titleOutroClip.setLength(3.9);
 
@@ -275,7 +275,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset2.setSize('large');
 							titleouttroTextAsset2.setPosition('bottom');
 						let titleOutroClip2 = new Shotstack.Clip;
-							titleOutroClip2.setAsset(titleOutroTextAsset2);
+							titleOutroClip2.setAsset(titleouttroTextAsset2);
 							titleOutroClip2.setStart(0.2);
 							titleOutroClip2.setLength(3.8);
 
