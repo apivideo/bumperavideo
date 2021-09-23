@@ -171,7 +171,7 @@ app.post('/trackprogress', (req,res) => {
 	console.log ("all the texts", introTitle+"  "+ introTitle2+"  "+ outroTitle+"  "+ outroTitle2); 
 	const bgpath = req.body.bgpath;
 	const wmpath = req.body.wmpath;
-	console.log("paths" bgpath+bgpath);
+	console.log("paths" ,bgpath+bgpath);
 	//we need the videoId and the mp4 encoding type to check the webhook responses
 	var videoId = reqBody.videoId;
 	var encodingType = "mp4";
