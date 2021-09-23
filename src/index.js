@@ -441,10 +441,10 @@ app.post('/videoprogress', (req,res) => {
 	currentStatus = videoStatus(videocreationList, idToCheck);
 	currentStatusJson  = JSON.parse(currentStatus);
 	//almost there - now we just check the webhooks for the final video uplaod - hnet 720 is ready make playable = true
-									
+	var finalVideoId = 			currentStatusJson.finalVideoId;					
 	//check the webhook to see if 720p is ready
 	for(var i=0;i<webhooks.length;i++){
-		if(webhooks[i].idToCheck === idToCheck && webhooks[i].quality === "720p")
+		if(webhooks[i].videoId === finalVideoId && webhooks[i].quality === "720p")
 		{
 			console.log("final video ready");
 			currentStatusJson.readyToPlay = true;
