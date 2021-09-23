@@ -136,8 +136,8 @@ app.post('/createVideo', (req,res) => {
 										"expires":tokenExpiry,
 										"videoId": videoId,
 										//also need to send the background image and watermakr filenames - to resend back to the server
-										"bgFile" : newbgPath,
-										"wmFile" :newWmPath
+										"bgFile" : bgName,
+										"wmFile" :bgName
 										};
 				res.setHeader('Content-Type', 'application/json');
 				res.end(JSON.stringify(tokenVideoIdJson));
@@ -169,9 +169,9 @@ app.post('/trackprogress', (req,res) => {
 	const outroTitle = req.body.outroTitle;
 	const outroTitle2 =req.body.outroTitle2;
 	console.log ("all the texts", introTitle+"  "+ introTitle2+"  "+ outroTitle+"  "+ outroTitle2); 
-	const bgpath = req.bgpath;
-	const wmpath = req.wmpath;
-
+	const bgpath = req.body.bgpath;
+	const wmpath = req.body.wmpath;
+	console.log("paths" bgpath+bgpath);
 	//we need the videoId and the mp4 encoding type to check the webhook responses
 	var videoId = reqBody.videoId;
 	var encodingType = "mp4";
