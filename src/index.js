@@ -163,10 +163,11 @@ app.post('/createVideo', (req,res) => {
 app.post('/trackprogress', (req,res) => {
 	var reqBody = (req.body);
 	// we need all the title text strings
-	const introTitle = req.introTitle;
-	const introTitle2 = req.introTitle2;
-	const outroTitle = req.outroTitle;
-	const outroTitle2 =req.outroTitle2;
+	console.log(reqBody);
+	const introTitle = req.body.introTitle;
+	const introTitle2 = req.body.introTitle2;
+	const outroTitle = req.body.outroTitle;
+	const outroTitle2 =req.body.outroTitle2;
 	console.log ("all the texts", introTitle+"  "+ introTitle2+"  "+ outroTitle+"  "+ outroTitle2); 
 	const bgpath = req.bgpath;
 	const wmpath = req.wmpath;
