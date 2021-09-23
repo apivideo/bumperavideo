@@ -135,7 +135,7 @@ window.onload  = function(){
                         var idtoCheck = pReq.response;
                         document.getElementById("video-information").innerHTML = "video created at api.video, and the bumpers are being created.";
                         statusButton = document.getElementById("statusButton");
-                        statusButton.style.display("inline");
+                        statusButton.style.visibility("visible");
                         statusButton.addEventListener('click', () =>{
                             //call the status endpoint
                             var rReq = new XMLHttpRequest();
