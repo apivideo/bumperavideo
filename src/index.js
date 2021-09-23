@@ -164,7 +164,7 @@ app.post('/createVideo', (req,res) => {
 });
 
 function videoStatus (videocreationList, videoId){
-	for(i=o; i< videocreationList.length;i++){
+	for(i=0; i< videocreationList.length;i++){
 		if(videocreationList[i].initialvideoid ==videoId){
 			//matched the video
 			console.log("matched a video status");
