@@ -78,6 +78,8 @@ window.onload  = function(){
                         videoId = tokenVideoId.videoId;
                         bgPath = tokenVideoId.bgFile;
                         wmPath = tokenVideoId.wmFile;
+                        title =tokenVideoId.title;
+                        descr = tokenVideoId.descr;
                         var delegatedToken = tokenVideoId.token;
                         const uploader = new VideoUploader({
                             file: input.files[0],
@@ -119,7 +121,9 @@ window.onload  = function(){
                         "outroTitle2":outroTitle2,
                         "videoId": videoId,
                         "bgpath": bgPath,
-                        "wmpath": wmPath
+                        "wmpath": wmPath, 
+                        "title":title, 
+                        "descr":descr
                     };
                     console.log ("titleJson", titleJson);
 
