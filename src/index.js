@@ -269,7 +269,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset.setPosition('center');
 						let titleOutroClip = new Shotstack.Clip;
 							titleOutroClip.setAsset(titleouttroTextAsset);
-							titleOutroClip.setStart(0.1);
+							titleOutroClip.setStart(0.1+duration);
 							titleOutroClip.setLength(3.9);
 
 
@@ -281,7 +281,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset2.setPosition('bottom');
 						let titleOutroClip2 = new Shotstack.Clip;
 							titleOutroClip2.setAsset(titleouttroTextAsset2);
-							titleOutroClip2.setStart(0.2);
+							titleOutroClip2.setStart(0.2+duration);
 							titleOutroClip2.setLength(3.8);
 
 						//all the assets in clips go in tracks
