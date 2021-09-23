@@ -137,7 +137,7 @@ app.post('/createVideo', (req,res) => {
 										"videoId": videoId,
 										//also need to send the background image and watermakr filenames - to resend back to the server
 										"bgFile" : bgName,
-										"wmFile" :bgName,
+										"wmFile" :wmName,
 										"title":title, 
 										"description":descr
 										};
@@ -293,8 +293,8 @@ app.post('/trackprogress', (req,res) => {
 						
 						//all the tracks go in a timeline
 						let timeline = new Shotstack.Timeline;
-								//timeline.setTracks([watermarkTrack, mainTrack]);
-								timeline.setTracks([ mainTrack]);
+								timeline.setTracks([watermarkTrack, mainTrack]);
+								//timeline.setTracks([ mainTrack]);
 						//output is required
 						let output = new Shotstack.Output;
 							output.setFormat('mp4')
@@ -359,7 +359,7 @@ app.post('/trackprogress', (req,res) => {
 							finalUpload.then (function(finalVideo) {
 								console.log(finalVideo);
 								var finalvideoId = finalVideo.videoId;
-								var finalPlayerURL = finalVideo.assets.finalPlayerURL;
+								var finalPlayerURL = finalVideo.assets.player;
 								console.log('finalvideoid',finalvideoId);
 								console.log('finalPlayerURL',finalPlayerURL);
 								res.send(finalPlayerURL);
