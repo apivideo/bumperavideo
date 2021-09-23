@@ -98,6 +98,7 @@ window.onload  = function(){
                                 playerUrl = video.assets.player;
                                 console.log("Images & video uploaded! We are now creating your video with bumpers." ) ;
                                 document.getElementById("video-information").innerHTML = "Images & video uploaded! We are now creating your video with bumpers." ;
+                                document.getElementById("chunk-information").innerHTML ="";
                                 uploadTheBumperText();
                             });
                     }
@@ -106,10 +107,10 @@ window.onload  = function(){
 
             
                 function uploadTheBumperText() {
-                    const introTitle = document.getElementById('introTitle').value;
-                    const introTitle2 = document.getElementById('introTitle2').value;
-                    const outroTitle = document.getElementById('outroTitle').value;
-                    const outroTitle2 = document.getElementById('outroTitle2').value;
+                    const introTitle = document.getElementById('introtitle').value;
+                    const introTitle2 = document.getElementById('introtitle2').value;
+                    const outroTitle = document.getElementById('outrotitle').value;
+                    const outroTitle2 = document.getElementById('outrotitle2').value;
                     var pReq = new XMLHttpRequest();
                     var titleJson = {
                         "introTitle":introTitle,
