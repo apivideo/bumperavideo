@@ -43,7 +43,8 @@ defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SSapiKey;
 
 
-
+//array of video created
+var videocreationList=[];
 
 //apivideo
 //const apiVideo = require('@api.video/nodejs-sdk');
@@ -162,8 +163,31 @@ app.post('/createVideo', (req,res) => {
 
 });
 
+function videoStatus (videocreationList, videoId){
+	for(i=o; i< videocreationList.length;i++){
+		if(videocreationList[i].initialvideoid ==videoId){
+			//matched the video
+			console.log("matched a video status");
+			console.log(JSON.stringify(videocreationList[i]));
+
+		}
+
+	}
+
+
+}
+
 
 app.post('/trackprogress',timeout('60s'), (req,res) => {
+
+	var videoProgressJson = { 	"initialvideoid":"",
+								"mp4Created": false,
+								"shotstackId" :"",
+								"shotstackStatus": "not started",
+								"finalVideoId": "",
+								"final720pReady":false
+							};
+
 	var reqBody = (req.body);
 	// we need all the title text strings
 	console.log(reqBody);
@@ -179,6 +203,10 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 	console.log("paths" ,bgpath+wmpath);
 	//we need the videoId and the mp4 encoding type to check the webhook responses
 	var videoId = reqBody.videoId;
+	videoProgressJson.initialvideoid = videoId;
+	videoStatus (videocreationList, videoId)
+	//now that there is a videoId in the JSON, i'll push to the array of videos being processed
+	videocreationList.push(videoProgressJson);
 	var encodingType = "mp4";
 	//has this videoId had a MP4 yet?
 	function checkWebhook(videoId, encodingType, webhooks){
@@ -190,6 +218,8 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 				foundMatch = true;
 				//need mp4 URL now that it is created
 				 getmp4 = client.videos.get(videoId);
+				 videoProgressJson.mp4Created = true;
+				 videoStatus (videocreationList, videoId)
 				 getmp4.then(function (mp4Result){ 
 					console.log("mp4Result", mp4Result);
 					//grab mp4 URL
@@ -317,7 +347,8 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 							console.log(message + '\n');
 							console.log('>> Now check the progress of your render by running:');
 							console.log('>> node examples/status.js ' + id);
-
+							videoProgressJson.shotstackId = id;
+							videoStatus (videocreationList, videoId);
 							//checking status
 							checkStatus(id);
 							
@@ -333,7 +364,8 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 							api.getRender(id).then((data) => {
 								let status = data.response.status;
 								let url = data.response.url;
-							
+								videoProgressJson.shotstackStatus = status;
+								videoStatus (videocreationList, videoId);
 								console.log('Status: ' + status.toUpperCase() + '\n');
 							
 								if (status == 'done') {
@@ -368,7 +400,8 @@ app.post('/trackprogress',timeout('60s'), (req,res) => {
 								console.log('finalvideoid',finalvideoId);
 								console.log('finalPlayerURL',finalPlayerURL);
 								res.send(finalPlayerURL);
-
+								videoProgressJson.shotstackStatus = status;
+								videoStatus (videocreationList, videoId);
 
 							});
 						}
