@@ -406,6 +406,23 @@ app.post('/trackprogress', (req,res) => {
 								videoProgressJson.finalPlayerURL = finalPlayerURL;
 								videoStatus(videocreationList, videoId);
 
+
+								//almost there - now we just check the webhooks for the final video uplaod - hnet 720 is ready make playable = true
+								function lastVersionReady(finalVideoId){
+										//check the webhook to see if 720p is ready
+										for(var i=0;i<webhooks.length;i++){
+											if(webhooks[i].videoId === finalvideoId && webhooks[i].quality === "720p")
+											{
+												console.log("final video ready");
+												videoProgressJson.readyToPlay = true;
+											}else{
+												setTimeout(2000,lastVersionReady,finalVideoId);
+											}
+	}
+
+
+								}
+								lastVersionReady(finalvideoId);
 							});
 						}
 
@@ -435,14 +452,7 @@ app.post('/videoprogress', (req,res) => {
 	//get the original videoId
 	var idToCheck = req.body.idToCheck;
 	console.log ("idToCheck",idToCheck);
-	//check the webhook to see if 720p is ready
-	for(var i=0;i<webhooks.length;i++){
-		if(webhooks[i].videoId === idToCheck && webhooks[i].quality === "720p")
-		{
-			console.log("final video ready");
-			webhooks[i].readyToPlay = true;
-		}
-	}
+
 	currentStatus = videoStatus(videocreationList, idToCheck);
 	console.log("currentStatus",currentStatus)
 
