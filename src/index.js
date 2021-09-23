@@ -375,7 +375,7 @@ app.post('/trackprogress', (req,res) => {
 			//no match yet, so wait 2 seconds and try again
 			//not encoded yet, wait 2 sec and re-reun checkMp4
 			console.log("no webhook yet.");
-			setTimeout(checkWebhook,2000,videoId, videoQuality, webhooks);
+			setTimeout(checkWebhook,2000,videoId, encodingType, webhooks);
 		}
 	}
 	checkWebhook(videoId, encodingType, webhooks);
