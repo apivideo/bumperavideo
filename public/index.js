@@ -148,11 +148,11 @@ window.onload  = function(){
                             var VideoIdJson = {
                                 "idToCheck":idtoCheck
                             }
-                            pReq.onload = function (oEvent) {
+                            rReq.onload = function (oEvent) {
                                 //not pretty atm
                                 document.getElementById("status").innerHTML = rReq.response;
                             }
-                            pReq.send(JSON.stringify(VideoIdJson));
+                            rReq.send(JSON.stringify(VideoIdJson));
 
                         })
                     }
