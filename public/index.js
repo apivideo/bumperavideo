@@ -106,10 +106,10 @@ window.onload  = function(){
 
             
                 function uploadTheBumperText() {
-                    const introTitle = document.getElementById('introTitle');
-                    const introTitle2 = document.getElementById('introTitle2');
-                    const outroTitle = document.getElementById('outroTitle');
-                    const outroTitle2 = document.getElementById('outroTitle2');
+                    const introTitle = document.getElementById('introTitle').value;
+                    const introTitle2 = document.getElementById('introTitle2').value;
+                    const outroTitle = document.getElementById('outroTitle').value;
+                    const outroTitle2 = document.getElementById('outroTitle2').value;
                     var pReq = new XMLHttpRequest();
                     var titleJson = {
                         "introTitle":introTitle,
