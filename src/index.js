@@ -416,6 +416,7 @@ app.post('/trackprogress', (req,res) => {
 												console.log("final video ready");
 												videoProgressJson.readyToPlay = true;
 											}else{
+												console.log("final video NOT ready");
 												setTimeout(lastVersionReady,2000,finalVideoId);
 											}
 	}
