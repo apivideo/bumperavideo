@@ -333,6 +333,7 @@ app.post('/trackprogress', (req,res) => {
 									
 								} else if (status == 'failed') {
 									console.log('>> Something went wrong, rendering has terminated and will not continue.');
+									console.log(data.response.error);
 								} else {
 									console.log('>> Rendering in progress, please try again shortly.\n>> Note: Rendering may take up to 1 minute to complete.');
 									setTimeout(checkStatus,2000,id);
