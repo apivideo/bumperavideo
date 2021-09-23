@@ -439,6 +439,7 @@ app.post('/videoprogress', (req,res) => {
 	for(var i=0;i<webhooks.length;i++){
 		if(webhooks[i].videoId === idToCheck && webhooks[i].quality === "720p")
 		{
+			console.log("final video ready");
 			webhooks[i].readyToPlay = true;
 		}
 	}
