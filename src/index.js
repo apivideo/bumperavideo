@@ -432,7 +432,8 @@ app.post('/trackprogress', (req,res) => {
 
 app.post('/videoprogress', (req,res) => {
 	//get the original videoId
-	req.body.idToCheck;
+	var idToCheck = req.body.idToCheck;
+	console.log ("idToCheck",idToCheck);
 	currentStatus = videoStatus(videocreationList, idToCheck);
 	console.log("currentStatus",currentStatus)
 	res.send(currentStatus);
