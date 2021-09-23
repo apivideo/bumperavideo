@@ -192,7 +192,7 @@ app.post('/trackprogress', (req,res) => {
 					getStatus.then(function (statusResult){
 						console.log("statusResult",statusResult);
 						//grab the duration	
-						const duration = statusResult.encoding.duration;
+						const duration = statusResult.encoding.metadata.duration;
 						console.log("mp4URL & duration", mp4Url + " " + duration);
 
 
@@ -205,7 +205,7 @@ app.post('/trackprogress', (req,res) => {
 						//video asset
 						let videoAsset = new Shotstack.VideoAsset;
 							videoAsset.setSrc(mp4Url);
-							videoAsset.volume(0.5);
+							videoAsset.setVolume(0.5);
 						let videoClip =  new Shotstack.Clip;
 							videoClip.setAsset(videoAsset);
 							videoClip.setStart(4);
