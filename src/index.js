@@ -452,7 +452,7 @@ app.post('/videoprogress', (req,res) => {
 			console.log("final video NOTready");
 			}
 	}
-	currentStatus = JSPN.stringify(currentStatusJson);
+	currentStatus = JSON.stringify(currentStatusJson);
 							
 	console.log("currentStatus",currentStatus)
 
