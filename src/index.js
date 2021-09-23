@@ -450,8 +450,7 @@ app.post('/videoprogress', (req,res) => {
 			currentStatusJson.readyToPlay = true;
 		}else{
 			console.log("final video NOTready");
-			setTimeout(lastVersionReady,2000,finalVideoId);
-		}
+			}
 	}
 	currentStatus = JSPN.stringify(currentStatusJson);
 							
