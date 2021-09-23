@@ -167,7 +167,7 @@ app.post('/trackprogress', (req,res) => {
 	const introTitle2 = req.introTitle2;
 	const outroTitle = req.outroTitle;
 	const outroTitle2 =req.outroTitle2;
-	console.log ("aa the texts", introTitle+"  "+ introTitle2+"  "+ outroTitle+"  "+ outroTitle2); 
+	console.log ("all the texts", introTitle+"  "+ introTitle2+"  "+ outroTitle+"  "+ outroTitle2); 
 	const bgpath = req.bgpath;
 	const wmpath = req.wmpath;
 
