@@ -284,7 +284,7 @@ app.post('/trackprogress', (req,res) => {
 						let watermarkTrack = new Shotstack.Track;
 							watermarkTrack.setClips([watermarkClip]);
 						let mainTrack = new Shotstack.Track;
-							mainTrack.setClios([introBGClip, titleIntroClip, titleIntroClip2, videoClip, outroBGClip, titleOutroClip, titleOutroClip2]);
+							mainTrack.setClips([introBGClip, titleIntroClip, titleIntroClip2, videoClip, outroBGClip, titleOutroClip, titleOutroClip2]);
 						
 						//all the tracks go in a timeline
 						let timeline = new Shotstack.Timeline;
