@@ -132,6 +132,7 @@ window.onload  = function(){
                     pReq.onload = function (oEvent) {
                         //this means that the mp4 was created - all the stuff sent to Shotstack, 
                         //the video created and uplaoded to api.video, and the 720p verison is readyto watch
+                        console.log(pReq.response);
                         var finalurl = pReq.response;
                         document.getElementById("video-information").innerHTML = "video created at api.video "+ finalurl;
                     }

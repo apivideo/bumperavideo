@@ -199,7 +199,7 @@ app.post('/trackprogress', (req,res) => {
 						//grab the duration	
 						const duration = statusResult.encoding.metadata.duration;
 						console.log("mp4URL & duration", mp4Url + " " + duration);
-
+						console.log(duration +4);
 
 						//create our query for Shotstack
 						//shotstack has a Node SDK
