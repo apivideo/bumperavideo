@@ -11,6 +11,7 @@ app.set('view engine','pug');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+var timeout = require('connect-timeout');
 
 //files
 var fs = require('fs');
@@ -162,7 +163,7 @@ app.post('/createVideo', (req,res) => {
 });
 
 
-app.post('/trackprogress', (req,res) => {
+app.post('/trackprogress',timeout('60s'), (req,res) => {
 	var reqBody = (req.body);
 	// we need all the title text strings
 	console.log(reqBody);
@@ -240,7 +241,7 @@ app.post('/trackprogress', (req,res) => {
 							watermarkClip.setOpacity(0.5);
 							watermarkClip.setFit("none");
 							watermarkClip.setStart(0);
-							watermarkClip.setLength(4+duration);
+							watermarkClip.setLength(4+duration+4);
 
 						//text assets
 						let titleIntroTextAsset =new Shotstack.TitleAsset;
