@@ -444,7 +444,7 @@ app.post('/videoprogress', (req,res) => {
 									
 	//check the webhook to see if 720p is ready
 	for(var i=0;i<webhooks.length;i++){
-		if(webhooks[i].videoId === idToCheck && webhooks[i].quality === "720p")
+		if(webhooks[i].idToCheck === idToCheck && webhooks[i].quality === "720p")
 		{
 			console.log("final video ready");
 			currentStatusJson.readyToPlay = true;
