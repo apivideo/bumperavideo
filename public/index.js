@@ -4,6 +4,8 @@ window.onload  = function(){
     const watermarkInput = document.getElementById('watermark-file');
     const watermarkName = document.getElementById('watermark-filename');
 
+    var statusButton = document.getElementById("statusButton");
+   
     
     //update div with filename on change
     watermarkInput.addEventListener('change',() =>{
@@ -134,9 +136,10 @@ window.onload  = function(){
                         console.log(pReq.response);
                         var idtoCheck = pReq.response;
                         document.getElementById("video-information").innerHTML = "video created at api.video, and the bumpers are being created.";
-                        var statusButton = document.getElementById("statusButton");
+                        
                         console.log("statusbutton", statusButton);
-                        statusButton.style.visibility("inherit");
+                        //button visible now
+                        statusButton.style.visibility=inherit;
                         statusButton.addEventListener('click', () =>{
                             //call the status endpoint
                             var rReq = new XMLHttpRequest();
