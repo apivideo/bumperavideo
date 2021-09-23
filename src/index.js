@@ -269,7 +269,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset.setPosition('center');
 						let titleOutroClip = new Shotstack.Clip;
 							titleOutroClip.setAsset(titleouttroTextAsset);
-							titleOutroClip.setStart(0.1+duration);
+							titleOutroClip.setStart(0.1+duration+4);
 							titleOutroClip.setLength(3.9);
 
 
@@ -281,7 +281,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset2.setPosition('bottom');
 						let titleOutroClip2 = new Shotstack.Clip;
 							titleOutroClip2.setAsset(titleouttroTextAsset2);
-							titleOutroClip2.setStart(0.2+duration);
+							titleOutroClip2.setStart(0.2+duration+4);
 							titleOutroClip2.setLength(3.8);
 
 						//all the assets in clips go in tracks
@@ -360,7 +360,7 @@ app.post('/trackprogress', (req,res) => {
 								console.log(finalVideo);
 								var finalvideoId = finalVideo.videoId;
 								var finalPlayerURL = finalVideo.assets.finalPlayerURL;
-								console.log(finalvideoId);
+								console.log('finalvideoid',finalvideoId);
 
 								res.end(finalPlayerURL);
 
