@@ -361,8 +361,8 @@ app.post('/trackprogress', (req,res) => {
 								var finalvideoId = finalVideo.videoId;
 								var finalPlayerURL = finalVideo.assets.finalPlayerURL;
 								console.log('finalvideoid',finalvideoId);
-
-								res.end(finalPlayerURL);
+								console.log('finalPlayerURL',finalPlayerURL);
+								res.send(finalPlayerURL);
 
 
 							});
