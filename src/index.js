@@ -239,7 +239,7 @@ app.post('/trackprogress', (req,res) => {
 							titleIntroTextAsset.setStyle('chunk');
 							titleIntroTextAsset.setColor('#ffffff');
 							titleIntroTextAsset.setSize('x-large');
-							titleIntroTextAsset.position('center');
+							titleIntroTextAsset.setPosition('center');
 						let titleIntroClip = new Shotstack.Clip;
 							titleIntroClip.setAsset(titleIntroTextAsset);
 							titleIntroClip.setStart(0.1);
@@ -250,7 +250,7 @@ app.post('/trackprogress', (req,res) => {
 							titleIntroTextAsset2.setStyle('chunk');
 							titleIntroTextAsset2.setColor('#ffffff');
 							titleIntroTextAsset2.setSize('large');
-							titleIntroTextAsset2.position('bottom');
+							titleIntroTextAsset2.setPosition('bottom');
 						let titleIntroClip2 = new Shotstack.Clip;
 							titleIntroClip2.setAsset(titleIntroTextAsset2);
 							titleIntroClip2.setStart(0.2);
@@ -261,7 +261,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset.setStyle('chunk');
 							titleouttroTextAsset.setColor('#ffffff');
 							titleouttroTextAsset.setSize('x-large');
-							titleouttroTextAsset.position('center');
+							titleouttroTextAsset.setPosition('center');
 						let titleOutroClip = new Shotstack.Clip;
 							titleOutroClip.setAsset(titleOutroTextAsset);
 							titleOutroClip.setStart(0.1);
@@ -273,7 +273,7 @@ app.post('/trackprogress', (req,res) => {
 							titleouttroTextAsset2.setStyle('chunk');
 							titleouttroTextAsset2.setColor('#ffffff');
 							titleouttroTextAsset2.setSize('large');
-							titleouttroTextAsset2.position('bottom');
+							titleouttroTextAsset2.setPosition('bottom');
 						let titleOutroClip2 = new Shotstack.Clip;
 							titleOutroClip2.setAsset(titleOutroTextAsset2);
 							titleOutroClip2.setStart(0.2);
