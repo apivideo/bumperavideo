@@ -144,6 +144,7 @@ window.onload  = function(){
                             //call the status endpoint
                             var rReq = new XMLHttpRequest();
                             rReq.open("POST", '/videoprogress' );
+                            rReq.setRequestHeader("Content-type", "application/json");
                             var VideoIdJson = {
                                 "idToCheck":idtoCheck
                             }

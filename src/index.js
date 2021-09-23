@@ -38,7 +38,7 @@ const defaultClient = Shotstack.ApiClient.instance;
 const DeveloperKey = defaultClient.authentications['DeveloperKey'];
 const api = new Shotstack.EditApi();
 //set to shotstack staging (for now)
-let apiUrl = 'https://api.shotstack.io/v1';
+let apiUrl = 'https://api.shotstack.io/stage';
 defaultClient.basePath = apiUrl;
 DeveloperKey.apiKey = process.env.SSapiKey;
 
