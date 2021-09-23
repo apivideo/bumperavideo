@@ -139,7 +139,7 @@ window.onload  = function(){
                         
                         console.log("statusbutton", statusButton);
                         //button visible now
-                        statusButton.style.visibility=inherit;
+                        statusButton.style.visibility="inherit";
                         statusButton.addEventListener('click', () =>{
                             //call the status endpoint
                             var rReq = new XMLHttpRequest();
