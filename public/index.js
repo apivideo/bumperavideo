@@ -153,9 +153,18 @@ window.onload  = function(){
                                 finalJson = JSON.parse(rReq.response);
                                 var finalURL = finalJson.finalPlayerURL;
                                 var readyToPlay = finalJson.readyToPlay;
-                                document.getElementById("status").innerHTML = rReq.response +"   "+finalJson;
+
+                                var formattedResponse = "initial videoId: " + finalJson.initialvideoid +
+                                                        "<br/>mp4 Created: "+ finalJson.mp4Created+
+                                                        "<br/>ShotstackId: "+ finalJson.shotstackId+
+                                                        "<br/>shotstackStatus: "+ finalJson.shotstackStatus+
+                                                        "<br/>finalVideoId: "+ finalJson.finalVideoId+
+                                                        "<br/>finalPlayerURL: "+ finalJson.finalPlayerURL+
+                                                        "<br/>readyToPlay: "+ finalJson.readyToPlay;
+
+                                document.getElementById("status").innerHTML = formattedResponse;
                                 if(readyToPlay){
-                                    document.getElementById("status").innerHTML = rReq.response + "<br/>Your <a href="+finalURL+" target = \"_new\">video with bumpers</a> will be available in a moment"
+                                    document.getElementById("status").innerHTML = formattedResponse + "<br/>Your <a href="+finalURL+" target = \"_new\">video with bumpers</a> will be available in a moment"
                                     document.getElementById("videoDiv").innerHTML = "<iframe src="+finalURL+" width=\"100%\" ></iframe>";
                                 }   
                             }
