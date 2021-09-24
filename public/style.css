@@ -4,11 +4,40 @@ body {background-color: white;
     text-align: center;
     
   }
-  
+
+#title{
+  padding:10px;
+  font-size: xx-large;
+  color:black;
+
+}
+#content{
+
+
+}
+
+#interaction{
+
+float:left;
+width:45%;
+}
+#examples{
+  float:right;
+  width:45%
+
+}
+
+.samples{
+  font-size: x-large;
+  color:black;
+  align:center;
+  padding:10px;
+}
+
 #action__upload{
     margin: auto;
     text-align: center;
-    width: 50%;
+    width: 100%;
    
     padding:10px;
     font-size: xx-large;
@@ -23,6 +52,10 @@ body {background-color: white;
     text-align: center;
   
   }
+
+  #namesection{
+    padding: 10px;
+  }
   #videoName-label{
     color:black;
     font-size: large;
@@ -30,27 +63,30 @@ body {background-color: white;
   }
   #videoName{
     background-color: #fa5B30;
-    width:35%;
+    width:95%;
     height: 30px;
     margin: auto;
     display: inline-block;
     text-align: center;
     border-radius: 25px;
     padding-top: 5px;
+
     font-size: large;
     color:white;
   }
   #videoDescription-label{
     color:black;
     font-size: large;
+    padding: 5px;
   }
   #bumperText{
-    width: 45%;
+    width: 95%;
     margin: auto;
     display: inline-block;
     text-align: center;
     padding:20px;
     border-style: solid;
+    border-radius: 25px;
   }
   .bumperText-label{
     color:black;
@@ -70,19 +106,24 @@ body {background-color: white;
   }
   #videoDescription{
     background-color: #fa5B30;
-    width:35%;
+    width:95%;
     height: 30px;
     margin: auto;
     display: inline-block;
     text-align: center;
     border-radius: 25px;
-    padding-top: 5px;
+    padding: 10px;
     font-size: large;
     color:white;
   }
+
+  #filesection{
+    padding: 10px;
+  }
+
   #watermark-file-label{
     background-color: #fa5B30;
-    width:50%;
+    width:90%;
     height: 30px;
     margin: auto;
     display: inline-block;
@@ -101,7 +142,7 @@ body {background-color: white;
   }
   #background-file-label{
     background-color: #fa5B30;
-    width:50%;
+    width:90%;
     height: 30px;
     margin: auto;
     display: inline-block;
@@ -120,7 +161,7 @@ body {background-color: white;
   }
   #video-file-label{
     background-color: #fa5B30;
-    width:50%;
+    width:90%;
     height: 60px;
     margin: auto;
     display: inline-block;
@@ -186,6 +227,7 @@ body {background-color: white;
 
   }  
   #footer{
+    clear:both;
     font-size: large;
     color: black;
     padding:10px;

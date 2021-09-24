@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Upload a video with a unique delegated token</title>
+	<title>Bumper a video</title>
 	<link rel="stylesheet" href="/style.css">
 	<script src = "index.js"></script>
 	<script src="https://unpkg.com/@api.video/video-uploader" defer></script>
@@ -32,52 +32,75 @@
 <body>
 	
 	<br>
-	<div id="action__upload">
+	<div id="title">
+		<img id="uploadFile__icon" draggable="false" src = "images/logo_orange_100.png"><br/>
 		Add Custom bumpers to your video!<br/>
-		<img id="uploadFile__icon" draggable="false" src = "upload.png">
-		<br/>
-		<label for="videoName" id="videoName-label">Video Title:</label> 
-		<input type="text" id="videoName" value= "my video with bumpers"> <br/>
-		<label for="videoDescription" id="videoDescription-label">Description:</label> 
-		<input type="text" id="videoDescription" value= "watch this cool video"> <br/>
-		<div id="bumperText">
-			<label for="introTitle" class="bumperText-label" id="introtitle-label">Bumper Intro Title:</label> 
-			<input type="text" id="introtitle" class = "bumperValues" value= "a.video demos"> <br/>
-			<label  class="bumperText-label" id="introtitle-label">Bumper Intro Line 2:</label> 
-			<input type="text" id="introtitle2" class = "bumperValues" value= "building bumper.a.video"> <br/>
-			<label class="bumperText-label" id="introtitle-label">Bumper Outro Title:</label> 
-			<input type="text" id="outrotitle" class = "bumperValues" value= "Thanks for watching!"> <br/>
-			<label class="bumperText-label" id="introtitle-label">Bumper Outro Line 2:</label> 
-			<input type="text" id="outrotitle2" class = "bumperValues" value= "more at https://a.video"> <br/>
-		</div>
-		<label for="background-file" id="background-file-label">
-			Add a bumper background image
-		</label>
-		<input type="file" id="background-file" ><div id="background-filename"></div> <br/>
-		<label for="watermark-file" id="watermark-file-label">
-			Add a watermark image
-		</label>
-		<input type="file" id="watermark-file" > 
-		<div id="watermark-filename"></div><br/>
-		
-		<label for="video-file" id="video-file-label">
-			Click here to pick your video
-		</label>
-		<input type="file" id="video-file" style='display:none'>
-
 	</div>
-	<br>	
-	<div id ="information">
-		<div id="token-information" style="width: 50%"></div>
-		<div id="video-information" style="width: 50%"></div>
-		<div id="chunk-information" style="width: 50%"></div>
-		<div id="file-update" style="width: 50%">
-			<button class="bumperValues"  style="visibility:hidden" id="statusButton">update status</button>
-			<div id ="status"></div>
-			<div id="videoDiv">	</div>
+	<div id="content">
+	<div id="interaction">
+		<div id="action__upload">
+			
+		
+			<br/>
+			<div id="namesection">
+				<label for="videoName" id="videoName-label">Video Title:</label> 
+				<input type="text" id="videoName" value= "my video with bumpers"> <br/>
+				<label for="videoDescription" id="videoDescription-label">Description:</label> 
+				<input type="text" id="videoDescription" value= "watch this cool video"> <br/>
+			</div>
+			<div id="bumperText">
+				<label for="introTitle" class="bumperText-label" id="introtitle-label">Bumper Intro Title:</label> 
+				<input type="text" id="introtitle" class = "bumperValues" value= "a.video demos"> <br/>
+				<label  class="bumperText-label" id="introtitle-label">Bumper Intro Line 2:</label> 
+				<input type="text" id="introtitle2" class = "bumperValues" value= "building bumper.a.video"> <br/>
+				<label class="bumperText-label" id="introtitle-label">Bumper Outro Title:</label> 
+				<input type="text" id="outrotitle" class = "bumperValues" value= "Thanks for watching!"> <br/>
+				<label class="bumperText-label" id="introtitle-label">Bumper Outro Line 2:</label> 
+				<input type="text" id="outrotitle2" class = "bumperValues" value= "more at https://a.video"> <br/>
+			</div>
+			<div id=filesection>
+				<label for="background-file" id="background-file-label">
+					Add a bumper background image
+				</label>
+				<input type="file" id="background-file" ><div id="background-filename"></div> <br/>
+				<label for="watermark-file" id="watermark-file-label">
+					Add a watermark image
+				</label>
+				<input type="file" id="watermark-file" > 
+				<div id="watermark-filename"></div><br/>
+				
+				<label for="video-file" id="video-file-label">
+					Click here to pick your video
+				</label>
+				<input type="file" id="video-file" style='display:none'>
+			</div>
+		</div>
+		<br>	
+		<div id ="information">
+			<div id="token-information" style="width: 50%"></div>
+			<div id="video-information" style="width: 50%"></div>
+			<div id="chunk-information" style="width: 50%"></div>
+			<div id="file-update" style="width: 50%">
+				<button class="bumperValues"  style="visibility:hidden" id="statusButton">update status</button>
+				<div id ="status"></div>
+				<div id="videoDiv">	</div>
+			</div>
 		</div>
 	</div>
 	<br/>
+	<div id="examples">
+		<div id="initialvideo" class="samples">
+			Quickly add a bumper (like this one) to your video
+		</div>
+		<div id ="samplebumper" class="samples">
+			<img src ="images/bumperexample.jpg" width="500px">
+		</div>
+		<div id="finalvideo" class="samples">
+			So it looks like this:
+			<iframe src="https://embed.api.video/vod/vi1RmRDpicGFwsWHXCW24Yxz" width="500px" height ="300px" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+		</div>
+	</div>
+	</div>
 	<div id="footer">
 		This app was created with <a href="https://api.video">api.video</a>.<br/>
 		Get the <a href="https://github.com/dougsillars/bumperavideo">sample code</a>, and read about <a href="https://a.video/works/private-delegated-upload">how we built the demo.</a><br/>
