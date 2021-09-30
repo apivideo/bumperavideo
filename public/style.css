@@ -173,6 +173,7 @@ width:45%;
   }
 
   #information{
+    clear:both;
     margin: auto;
     text-align: center;
     width: 50%;
