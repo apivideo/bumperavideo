@@ -24,9 +24,8 @@ The background video and the 2 outro texts are added to the end of your video.
 
 ## Live demo
 
-http://bumper.a.video/add-bumpers-to-your-video-with-bumper-a-video
-
+http://bumper.a.video/
 ## 
 
 detailed blog post:
-https://api.video/blog/tutorials/
+https://api.video/blog/tutorials/add-bumpers-to-your-video-with-bumper-a-video
