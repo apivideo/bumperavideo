@@ -10,7 +10,7 @@
 
 [api.video](https://api.video) provides video APIs for building, scaling and operating on-demand and live streaming videos in your app, software or platform. 
 
-This demo app integrates api.video with [Shotstack](https://shotstack.io) to add text and images as an intro and outro to your vide, giving it a more polished finish. Upon complettion of the bumpers, the final video is uploaded to your api.video account. It can then be eassily shared as a [video on demand](https://api.video/what-is/vod-video-on-demand) for your friends to watch!
+This demo app integrates api.video with [Shotstack](https://shotstack.io) to add text and images as an intro and outro to your video, giving it a more polished finish. Upon complettion of the bumpers, the final video is uploaded to your api.video account. It can then be eassily shared as a [video on demand](https://api.video/what-is/vod-video-on-demand) for your friends to watch!
 
 Try it yourself at [duet.a.video](https://duet.a.video).
 
