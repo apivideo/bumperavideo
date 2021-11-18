@@ -8,7 +8,10 @@
 
 ![](https://github.com/apivideo/API_OAS_file/blob/master/apivideo_banner.png)
 
-[api.video](https://api.video) provides video APIs for building, scaling and operating on-demand and live streaming videos in your app, software or platform. 
+<h1 align="center">api.video bunmper a video</h1>
+
+[api.video](https://api.video) is the video infrastructure for product builders. Lightning fast video APIs for integrating, scaling, and managing on-demand & low latency live streaming features in your app.
+
 
 This demo app integrates api.video with [Shotstack](https://shotstack.io) to add text and images as an intro and outro to your video, giving it a more polished finish. Upon complettion of the bumpers, the final video is uploaded to your api.video account. It can then be eassily shared as a [video on demand](https://api.video/what-is/vod-video-on-demand) for your friends to watch!
 
